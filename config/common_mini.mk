@@ -1,4 +1,4 @@
-# Inherit mini common Cherish stuff
-$(call inherit-product, vendor/cherish/config/common_mobile.mk)
+# Inherit mini common Lotus stuff
+$(call inherit-product, vendor/lotus/config/common_mobile.mk)
 
 PRODUCT_SIZE := mini

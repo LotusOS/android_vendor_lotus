@@ -2,6 +2,7 @@
 #
 # Copyright (C) 2013-15 The CyanogenMod Project
 #           (C) 2020    The CherishOS
+#           (C) 2021    The LotusOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -153,8 +154,8 @@ def fetch_query(remote_url, query):
 
 
 if __name__ == '__main__':
-    # Default to CherishOS Gerrit
-    default_gerrit = 'https://review.cherishos.com'
+    # Default to LotusOS Gerrit
+    default_gerrit = 'https://review.lotusos.com'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking

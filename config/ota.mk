@@ -1,9 +1,9 @@
-ifeq ($(CHERISH_BUILD_TYPE), OFFICIAL)
+ifeq ($(LOTUS_BUILD_TYPE), OFFICIAL)
 
-CHERISH_OTA_VERSION_CODE := eleven
+LOTUS_OTA_VERSION_CODE := eleven
 
 PRODUCT_GENERIC_PROPERTIES += \
-    org.cherish.ota.version_code=$(CHERISH_OTA_VERSION_CODE) \
+    org.lotus.ota.version_code=$(LOTUS_OTA_VERSION_CODE) \
     sys.ota.disable_uncrypt=1
 PRODUCT_PACKAGES += \
     Updates

@@ -41,11 +41,11 @@ except ImportError:
 
 DEBUG = False
 
-custom_local_manifest = ".repo/local_manifests/cherish_manifest.xml"
+custom_local_manifest = ".repo/local_manifests/lotus_manifest.xml"
 custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', 'eleven')
-custom_dependencies = "cherish.dependencies"
-org_manifest = "CherishOS-Devices"  # leave empty if org is provided in manifest
-org_display = "CherishOS-Devices"  # needed for displaying
+custom_dependencies = "lotus.dependencies"
+org_manifest = "LotusOS-Devices"  # leave empty if org is provided in manifest
+org_display = "LotusOS-Devices"  # needed for displaying
 
 github_auth = None
 

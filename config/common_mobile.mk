@@ -1,5 +1,5 @@
-# Inherit common mobile Cherish stuff
-$(call inherit-product, vendor/cherish/config/common.mk)
+# Inherit common mobile Lotus stuff
+$(call inherit-product, vendor/lotus/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \

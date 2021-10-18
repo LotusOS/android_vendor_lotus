@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= CherishOS
+PRODUCT_BRAND ?= LotusOS
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -33,15 +33,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/cherish/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/cherish/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/cherish/prebuilt/common/bin/50-cherish.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-cherish.sh
+    vendor/lotus/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/lotus/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/lotus/prebuilt/common/bin/50-lotus.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-lotus.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/cherish/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/cherish/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/cherish/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/lotus/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/lotus/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/lotus/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
@@ -50,23 +50,23 @@ endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cherish/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
+    vendor/lotus/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
 
-# cherish-specific broadcast actions whitelist
+# lotus-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/cherish/config/permissions/cherish-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/cherish-sysconfig.xml
+    vendor/lotus/config/permissions/lotus-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lotus-sysconfig.xml
 
-# Copy all cherish-specific init rc files
-$(foreach f,$(wildcard vendor/cherish/prebuilt/common/etc/init/*.rc),\
+# Copy all lotus-specific init rc files
+$(foreach f,$(wildcard vendor/lotus/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Font service Permissions
 PRODUCT_COPY_FILES += \
-    vendor/cherish/config/permissions/privapp-permissions-cherish-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-cherish-system_ext.xml \
+    vendor/lotus/config/permissions/privapp-permissions-lotus-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lotus-system_ext.xml \
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
-    vendor/cherish/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+    vendor/lotus/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -81,12 +81,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=log
 
 # Include AOSP audio files
-include vendor/cherish/config/aosp_audio.mk
+include vendor/lotus/config/aosp_audio.mk
 
-# Include cherish audio files
-include vendor/cherish/config/cherish_audio.mk
+# Include lotus audio files
+include vendor/lotus/config/lotus_audio.mk
 
-# Include CherishOS Themes Styles
+# Include LotusOS Themes Styles
 #include vendor/themes/themes.mk
 
 # Plugins
@@ -119,22 +119,22 @@ PRODUCT_PACKAGES += \
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/cherish/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/lotus/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
-     PRODUCT_COPY_FILES += vendor/cherish/bootanimation/bootanimation_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/lotus/bootanimation/bootanimation_1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
-     PRODUCT_COPY_FILES += vendor/cherish/bootanimation/bootanimation_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+     PRODUCT_COPY_FILES += vendor/lotus/bootanimation/bootanimation_720.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 else
     ifeq ($(TARGET_BOOT_ANIMATION_RES),)
-        $(warning "CherishStyle: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
+        $(warning "LotusStyle: TARGET_BOOT_ANIMATION_RES is undefined, assuming 1080p")
     else
-        $(warning "CherishStyle: Current bootanimation res is not supported, forcing 1080p")
+        $(warning "LotusStyle: Current bootanimation res is not supported, forcing 1080p")
     endif
-    PRODUCT_COPY_FILES += vendor/cherish/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+    PRODUCT_COPY_FILES += vendor/lotus/bootanimation/bootanimation_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
 # Versioning
-include vendor/cherish/config/main_version.mk
+include vendor/lotus/config/main_version.mk
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Seedvault 
 
-# Extra tools in cherish
+# Extra tools in lotus
 PRODUCT_PACKAGES += \
     7z \
     bash \
@@ -265,7 +265,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.iorapd.enable=true
 
 # OTA
-$(call inherit-product, vendor/cherish/config/ota.mk)
+$(call inherit-product, vendor/lotus/config/ota.mk)
 
 # GApps
 ifeq ($(WITH_GMS),true)
@@ -273,19 +273,19 @@ $(call inherit-product, vendor/gms/gms_full.mk)
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/cherish/overlay-gapps/common
+    vendor/lotus/overlay-gapps/common
 
 # Exclude RRO Enforcement
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
-    vendor/cherish/overlay-gapps
+    vendor/lotus/overlay-gapps
 
-$(call inherit-product, vendor/cherish/config/rro_overlays.mk)
+$(call inherit-product, vendor/lotus/config/rro_overlays.mk)
 else
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/cherish/overlay-aosp
-DEVICE_PACKAGE_OVERLAYS += vendor/cherish/overlay-aosp/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lotus/overlay-aosp
+DEVICE_PACKAGE_OVERLAYS += vendor/lotus/overlay-aosp/common
 endif
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/cherish/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/cherish/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/lotus/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/lotus/overlay/common
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/cherish/config/partner_gms.mk
+-include vendor/lotus/config/partner_gms.mk

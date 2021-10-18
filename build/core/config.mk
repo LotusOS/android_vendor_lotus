@@ -14,4 +14,4 @@
 # limitations under the License.
 
 # Rules for QCOM targets
-include $(TOPDIR)vendor/cherish/build/core/qcom_target.mk
+include $(TOPDIR)vendor/lotus/build/core/qcom_target.mk

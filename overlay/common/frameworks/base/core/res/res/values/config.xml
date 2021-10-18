@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="config_mms_user_agent">Cherish</string>
+    <string name="config_mms_user_agent">Lotus</string>
     <string name="config_mms_user_agent_profile_url">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">

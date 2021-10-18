@@ -1,10 +1,10 @@
 #
-# Cherish Audio Files
+# Lotus Audio Files
 #
 
-ALARM_PATH := vendor/cherish/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/cherish/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/cherish/prebuilt/common/media/audio/ringtones
+ALARM_PATH := vendor/lotus/prebuilt/common/media/audio/alarms
+NOTIFICATION_PATH := vendor/lotus/prebuilt/common/media/audio/notifications
+RINGTONE_PATH := vendor/lotus/prebuilt/common/media/audio/ringtones
 
 # Alarms
 PRODUCT_COPY_FILES += \

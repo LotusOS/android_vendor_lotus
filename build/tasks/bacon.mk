@@ -14,12 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CHERISH_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CHERISH_VERSION).zip
+LOTUS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(LOTUS_VERSION).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(CHERISH_TARGET_PACKAGE)
-	$(hide) $(MD5) $(CHERISH_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CHERISH_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(CHERISH_TARGET_PACKAGE)" >&2
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(LOTUS_TARGET_PACKAGE)
+	$(hide) $(MD5) $(LOTUS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(LOTUS_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(LOTUS_TARGET_PACKAGE)" >&2

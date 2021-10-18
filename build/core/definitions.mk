@@ -1,12 +1,12 @@
 #
-# Cherish-specific macros
+# Lotus-specific macros
 #
 define uniq
 $(if $1,$(firstword $1) $(call uniq,$(filter-out $(firstword $1),$1)))
 endef
 
 # Include board/platform macros
-include vendor/cherish/build/core/utils.mk
+include vendor/lotus/build/core/utils.mk
 
 # Include vendor platform definitions
-include vendor/cherish/build/core/vendor/*.mk
+include vendor/lotus/build/core/vendor/*.mk

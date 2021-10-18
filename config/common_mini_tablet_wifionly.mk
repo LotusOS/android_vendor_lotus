@@ -1,5 +1,5 @@
-# Inherit mini common Cherish stuff
-$(call inherit-product, vendor/cherish/config/common_mini.mk)
+# Inherit mini common Lotus stuff
+$(call inherit-product, vendor/lotus/config/common_mini.mk)
 
 # Required packages
 PRODUCT_PACKAGES += \
