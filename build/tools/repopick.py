@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
 # Copyright (C) 2013-15 The CyanogenMod Project
-#           (C) 2020    The CherishOS
 #           (C) 2021    The LotusOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

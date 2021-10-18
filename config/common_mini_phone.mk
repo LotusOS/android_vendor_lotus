@@ -5,4 +5,4 @@ $(call inherit-product, vendor/lotus/config/common_mini.mk)
 PRODUCT_PACKAGES += \
     LatinIME
 
-$(call inherit-product, vendor/cherish/lotus/telephony.mk)
+$(call inherit-product, vendor/lotus/lotus/telephony.mk)

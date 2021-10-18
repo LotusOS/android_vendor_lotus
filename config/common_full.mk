@@ -1,5 +1,5 @@
 # Inherit common Lotus stuff
-$(call inherit-product, vendor/cherish/lotus/common_mobile.mk)
+$(call inherit-product, vendor/lotus/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
